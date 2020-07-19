@@ -64,7 +64,7 @@ exports.login = async (req, res) => {
       {
         id: user.id,
       },
-      process.env.SECRET_KEY
+      process.env.JWT_KEY
     );
 
     res.status(200).send({
@@ -131,7 +131,7 @@ exports.register = async (req, res) => {
       {
         id: user.id,
       },
-      process.env.SECRET_KEY
+      process.env.JWT_KEY
     );
 
     res.status(200).send({
