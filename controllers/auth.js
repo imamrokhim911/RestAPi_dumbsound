@@ -13,6 +13,7 @@ exports.cekAuth = async (req, res) => {
         exclude: ["createdAt", "updatedAt", "categoryId", "password"],
       },
     });
+    console.log(user);
     res.status(200).send({
       data: user,
     });
