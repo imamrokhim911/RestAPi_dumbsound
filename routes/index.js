@@ -6,6 +6,7 @@ const { upload } = require("../middleware/uploadImage");
 const { auth, authAdmin } = require("../middleware/auth");
 
 const { login, register, cekAuth } = require("../controllers/auth");
+const { getUser } = require("../controllers/user");
 
 const { getSong, addSong, getDetailSong } = require("../controllers/song");
 
@@ -22,6 +23,7 @@ router.post("/register", register);
 router.post("/login", login);
 router.get("/auth", auth, cekAuth);
 
+router.get("/users", getUser);
 router.get("/song", getSong);
 router.get("/song/:id", getDetailSong);
 router.post("/song", upload("thumbnail"), addSong);
